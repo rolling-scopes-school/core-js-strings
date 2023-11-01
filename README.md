@@ -1,21 +1,19 @@
-# Core JS 101
+# Core JS Strings
 
 :warning: **Please note that you mustn't open PRs that contains the answers to this repo!**
 
 However, PRs with the fixes or proposals are welcomed!
 
 ## Task
-The task is to implement functions on different Core JS topics. There are eight modules with different tasks. Each module consists of tasks for specified topic:
-
-2. Numbers
+The goal of the assignment is to learn how to work with strings in JS.
 
 **Active usage of [documentation](https://developer.mozilla.org/en-US/) is strongly recommended!**
 
 ## Prepare and test
 1. Install Node.js
-2. Fork this repository: https://github.com/rolling-scopes-school/core-js-numbers
-3. Clone your newly created repo: `https://github.com/<%your_github_username%>/core-js-numbers/`
-4. Go to folder `core-js-numbers`
+2. Fork this repository: https://github.com/rolling-scopes-school/core-js-strings
+3. Clone your newly created repo: `https://github.com/<%your_github_username%>/core-js-strings/`
+4. Go to folder `core-js-strings`
 5. To install all dependencies use `npm install`
 6. Each task is usually a regular function:
     ```javascript
@@ -49,7 +47,7 @@ The task is to implement functions on different Core JS topics. There are eight 
 ## Submit to [rs app](https://app.rs.school/)
 1. Open [rs app](https://app.rs.school/) and login
 2. Go to [submit task page](https://app.rs.school/course/submit-task?course=rs-2019-q3)
-3. Select your task (Core JS Numbers)
+3. Select your task (Core JS Strings)
 4. Press submit button and enjoy
 
 ## Notes
