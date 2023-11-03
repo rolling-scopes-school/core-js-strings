@@ -42,11 +42,11 @@ The goal of the assignment is to learn how to work with strings in JS.
     ```
     Implement the function by any way and verify your solution by running tests until the failed test become passed (green).
 8. Run `npm test` in command line. If everything is OK you can try to resolve the next task.
-9. You will see the number of passing and pending tests: `101` of passing tests is equal to `100` in score.
+9. You will see the number of passing and pending tests.
 
 ## Submit to [rs app](https://app.rs.school/)
-1. Open [rs app](https://app.rs.school/) and login
-2. Go to [submit task page](https://app.rs.school/course/submit-task?course=rs-2019-q3)
+1. Open rs app and login
+2. Go to submit task page
 3. Select your task (Core JS Strings)
 4. Press submit button and enjoy
 
