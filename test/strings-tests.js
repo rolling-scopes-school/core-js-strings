@@ -311,3 +311,214 @@ describe('strings-tasks', () => {
     });
   });
 });
+
+describe('strings-tasks optimal implementation', () => {
+  it.optional('optimal implementation of concatenateStrings', function test() {
+    let fnStr = tasks.concatenateStrings.toString();
+    const idx = fnStr.indexOf('{');
+    fnStr = fnStr.slice(idx);
+
+    if (!fnStr.includes('return')) {
+      this.skip();
+    }   
+
+    assert.equal(
+      fnStr.includes('concat'),
+      true,
+      'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
+    );
+  });
+
+  it.optional('optimal implementation of getFirstChar', function test() {
+    const fnStr = tasks.getFirstChar.toString();
+    if (!fnStr.includes('return')) {
+      this.skip();
+    }
+    assert.equal(
+      fnStr.includes('charAt'),
+      true,
+      'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
+    );
+  });
+
+  it.optional('optimal implementation of removeLeadingAndTrailingWhitespaces', function test() {
+    let fnStr = tasks.removeLeadingAndTrailingWhitespaces.toString();
+    const idx = fnStr.indexOf('{');
+    fnStr = fnStr.slice(idx);
+
+    if (!fnStr.includes('return')) {
+      this.skip();
+    }
+
+    assert.equal(
+      fnStr.includes('trim'),
+      true,
+      'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
+    );
+  });
+
+  it.optional('optimal implementation of removeLeadingWhitespaces', function test() {
+    let fnStr = tasks.removeLeadingWhitespaces.toString();
+    const idx = fnStr.indexOf('{');
+    fnStr = fnStr.slice(idx);
+
+    if (!fnStr.includes('return')) {
+      this.skip();
+    }
+
+    assert.equal(
+      fnStr.includes('trimStart'),
+      true,
+      'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
+    );
+  });
+
+  it.optional('optimal implementation of removeTrailingWhitespaces', function test() {
+    let fnStr = tasks.removeTrailingWhitespaces.toString();
+    const idx = fnStr.indexOf('{');
+    fnStr = fnStr.slice(idx);
+
+    if (!fnStr.includes('return')) {
+      this.skip();
+    }
+
+    assert.equal(
+      fnStr.includes('trimEnd'),
+      true,
+      'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
+    );
+  });
+
+  it.optional('optimal implementation of repeatString', function test() {
+    let fnStr = tasks.repeatString.toString();
+    const idx = fnStr.indexOf('{');
+    fnStr = fnStr.slice(idx);
+
+    if (!fnStr.includes('return')) {
+      this.skip();
+    }
+
+    assert.equal(
+      fnStr.includes('repeat'),
+      true,
+      'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
+    );
+  });
+
+  it.optional('optimal implementation of removeFirstOccurrences', function test() {
+    const fnStr = tasks.removeFirstOccurrences.toString();
+    if (!fnStr.includes('return')) {
+      this.skip();
+    }
+    assert.equal(
+      fnStr.includes('indexOf'),
+      true,
+      'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
+    );
+  });
+
+  it.optional('optimal implementation of removeLastOccurrences', function test() {
+    const fnStr = tasks.removeLastOccurrences.toString();
+    if (!fnStr.includes('return')) {
+      this.skip();
+    }
+    assert.equal(
+      fnStr.includes('lastIndexOf'),
+      true,
+      'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
+    );
+  });
+
+  it.optional('optimal implementation of sumOfCodes', function test() {
+    const fnStr = tasks.sumOfCodes.toString();
+    if (!fnStr.includes('return')) {
+      this.skip();
+    }
+    assert.equal(
+      fnStr.includes('charCodeAt'),
+      true,
+      'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
+    );
+  });
+
+  it.optional('optimal implementation of endsWith', function test() {
+    let fnStr = tasks.endsWith.toString();
+    const idx = fnStr.indexOf('{');
+    fnStr = fnStr.slice(idx);
+
+    if (!fnStr.includes('return')) {
+      this.skip();
+    }
+
+    assert.equal(
+      fnStr.includes('endsWith'),
+      true,
+      'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
+    );
+  });
+
+  it.optional('optimal implementation of startsWith', function test() {
+    let fnStr = tasks.startsWith.toString();
+    const idx = fnStr.indexOf('{');
+    fnStr = fnStr.slice(idx);
+
+    if (!fnStr.includes('return')) {
+      this.skip();
+    }
+
+    assert.equal(
+      fnStr.includes('startsWith'),
+      true,
+      'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
+    );
+  });
+
+  it.optional('optimal implementation of formatTime', function test() {
+    const fnStr = tasks.formatTime.toString();
+    if (!fnStr.includes('return')) {
+      this.skip();
+    }
+    assert.equal(
+      fnStr.includes('padStart'),
+      true,
+      'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
+    );
+  });
+
+  it.optional('optimal implementation of containsSubstring', function test() {
+    const fnStr = tasks.containsSubstring.toString();
+    if (!fnStr.includes('return')) {
+      this.skip();
+    }
+    assert.equal(
+      fnStr.includes('includes'),
+      true,
+      'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
+    );
+  });
+
+  it.optional('optimal implementation of invertCase', function test() {
+    const fnStr = tasks.invertCase.toString();
+    if (!fnStr.includes('return')) {
+      this.skip();
+    }
+    assert.equal(
+      fnStr.includes('toLowerCase') && fnStr.includes('toUpperCase'),
+      true,
+      'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
+    );
+  });
+
+  it.optional('optimal implementation of extractEmails', function test() {
+    const fnStr = tasks.extractEmails.toString();
+    if (!fnStr.includes('return')) {
+      this.skip();
+    }
+    assert.equal(
+      fnStr.includes('split'),
+      true,
+      'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
+    );
+  });
+
+});

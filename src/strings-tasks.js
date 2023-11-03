@@ -190,8 +190,8 @@ function sumOfCodes(/* str */) {
  * @return {boolean} - Returns true if str starts with substr, false otherwise.
  *
  * @example:
- *   endsWith('Hello World', 'World') => false
- *   endsWith('Hello World', 'Hello') => true
+ *   startsWith('Hello World', 'World') => false
+ *   startsWith('Hello World', 'Hello') => true
  */
 function startsWith(/* str, substr */) {
   throw new Error('Not implemented');
@@ -233,7 +233,7 @@ function formatTime(/* minutes, seconds */) {
  * Returns a string in reverse order.
  *
  * @param {string} str - The input string.
- * @return {string} - The string in reverse order
+ * @return {string} - The string in reverse order.
  *
  * @example:
  *   reverseString('abcdef') => 'fedcba'
@@ -247,7 +247,7 @@ function reverseString(/* str */) {
  * Returns a string with characters in alphabetical order.
  *
  * @param {string} str - The input string.
- * @return {string} - The string in alphabetical order
+ * @return {string} - The string in alphabetical order.
  *
  * @example:
  *   orderAlphabetically('webmaster') => 'abeemrstw'
@@ -279,7 +279,7 @@ function containsSubstring(/* str, substring */) {
  * Vowels: 'a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y'.
  *
  * @param {string} str - The input string.
- * @return {number} - The number of vowels in the string
+ * @return {number} - The number of vowels in the string.
  *
  * @example:
  *   countVowels('apple')  => 2
@@ -374,8 +374,8 @@ function getStringFromTemplate(/* firstName, lastName */) {
 /**
  * Extracts a name from template string 'Hello, First_Name Last_Name!'.
  *
- * @param {string} value - The input value
- * @return {string} - The name extracted from the template
+ * @param {string} value - The input value.
+ * @return {string} - The name extracted from the template.
  *
  * @example
  *   extractNameFromTemplate('Hello, John Doe!') => 'John Doe'
@@ -388,8 +388,8 @@ function extractNameFromTemplate(/* value */) {
 /**
  * Remove the first and last angle brackets from tag string
  *
- * @param {string} str - The input tag
- * @return {string} - The tag without the first and last angle brackets
+ * @param {string} str - The input tag.
+ * @return {string} - The tag without the first and last angle brackets.
  *
  * @example
  *   unbracketTag('<div>') => 'div'
@@ -401,10 +401,10 @@ function unbracketTag(/* str */) {
 }
 
 /**
- * Extracts e-mails from single string with e-mails list delimeted by semicolons
+ * Extracts e-mails from single string with e-mails list delimited by semicolons
  *
- * @param {string} str
- * @return {array}
+ * @param {string} str - The input string.
+ * @return {array} - The list of e-mails extracted from the string.
  *
  * @example
  *   'angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com'
@@ -423,8 +423,8 @@ function extractEmails(/* str */) {
  * Encode specified string with ROT13 cipher
  * See details:  https://en.wikipedia.org/wiki/ROT13
  *
- * @param {string} str
- * @return {string}
+ * @param {string} str - The input string.
+ * @return {string} - The ROT13 encoded string.
  *
  * @example
  *
@@ -452,8 +452,8 @@ function encodeToRot13(/* str */) {
  * (see https://en.wikipedia.org/wiki/Standard_52-card_deck)
  * Function returns the zero-based index of specified card in the initial deck above.
  *
- * @param {string} value
- * @return {number}
+ * @param {string} value - The card value.
+ * @return {number} - The zero-based index.
  *
  * @example
  *   'A♣' => 0
