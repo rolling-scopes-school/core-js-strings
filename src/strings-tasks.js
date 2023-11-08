@@ -347,7 +347,7 @@ function reverseWords(/* str */) {
  *
  * @example
  *   invertCase('Hello, World!') =>  'hELLO, wORLD!'
- *   invertCase('JavaScript is Fun') => 'jAVASCRIPT IS fUN'
+ *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
  */
 function invertCase(/* str */) {
