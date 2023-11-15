@@ -51,7 +51,7 @@ The goal of the assignment is to learn how to work with strings in JS.
 4. Press submit button and enjoy
 
 ## Notes
-* We recommend you to use nodejs of version 14 or lower. If you using any of features that does not supported by node `v14`, score won't be submitted.
+* We recommend you to use nodejs of version 16. If you using any of features that does not supported by node `v16`, score won't be submitted.
 * Please be sure that each of your test in limit of 30sec.
 * You will get 0 (zero) if you have any eslint's errors or warnings.
 
