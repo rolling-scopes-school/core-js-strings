@@ -61,7 +61,6 @@ isString(null);
 isString([]);
 isString({});
 isString('test');
-isString(new String('test'));
 
 /**
  * Returns the result of concatenation of two strings.
@@ -168,12 +167,7 @@ removeTrailingWhitespaces('\t\t\tHello, World! ');
  *   repeatString('abc', -2) => ''
  */
 function repeatString(str, times) {
-  if (str === String) {
-    return str.repeat(times);
-  }
-  if (times >= 1) {
-    return str.repeat(times);
-  }
+  return str === '' || times <= 0 ? 0 : str.repeat(times);
 }
 repeatString('A', 5);
 repeatString('cat', 3);
@@ -238,12 +232,11 @@ removeLastOccurrences('ABABAB', 'BA');
 function sumOfCodes(str) {
   let sum = 0;
   if (!str) {
-    str = 0;
-  } else {
-    for (let i = 0; i < str.length; i++) {
-      const e = str[i].charCodeAt();
-      sum += e;
-    }
+    return 0;
+  }
+  for (let i = 0; i < str.length; i += 1) {
+    const e = str[i].charCodeAt();
+    sum += e;
   }
   return sum;
 }
@@ -323,7 +316,7 @@ formatTime(0, 0);
  */
 function reverseString(str) {
   const arr = [];
-  for (let i = 0; i < str.length; i++) {
+  for (let i = 0; i < str.length; i += 1) {
     const element = str[i];
     arr.push(element);
   }
@@ -348,7 +341,7 @@ reverseString('12345');
  */
 function orderAlphabetically(str) {
   const arr = [];
-  for (let i = 0; i < str.length; i++) {
+  for (let i = 0; i < str.length; i += 1) {
     const element = str[i];
     arr.push(element);
   }
@@ -401,21 +394,21 @@ function countVowels(str) {
   const vowels = ['a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y'];
   const arr = [];
 
-  for (let i = 0; i < vowels.length; i++) {
+  for (let i = 0; i < vowels.length; i += 1) {
     const element = vowels[i];
 
-    for (let i = 0; i < str.length; i++) {
-      const e = str[i];
+    for (let j = 0; j < str.length; j += 1) {
+      const e = str[j];
 
-      if (e == element) {
-        const numberTrue = e == element;
+      if (e === element) {
+        const numberTrue = e === element;
         arr.push(numberTrue);
       }
     }
   }
   let sum = 0;
 
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i += 1) {
     const element = arr[i];
 
     sum += element;
@@ -453,14 +446,14 @@ function isPalindrome(str) {
     .replaceAll(regExp, '')
     .replaceAll(space, '');
 
-  for (let i = 0; i < lowLetterWithReplace.length; i++) {
+  for (let i = 0; i < lowLetterWithReplace.length; i += 1) {
     const element = lowLetterWithReplace[i];
     arr.push(element);
   }
 
-  const reverseString = arr.reverse().join('');
+  const reverseStr = arr.reverse().join('');
 
-  if (lowLetterWithReplace == reverseString) {
+  if (lowLetterWithReplace === reverseStr) {
     return true;
   }
   return false;
@@ -487,7 +480,7 @@ function findLongestWord(sentence) {
   const replaced = sentence.replaceAll(' ', ',');
   const replacedToArr = replaced.split(',');
   const arr = [];
-  for (let i = 0; i < replacedToArr.length; i++) {
+  for (let i = 0; i < replacedToArr.length; i += 1) {
     const el = replacedToArr[i];
     const longest = el.length;
     const key = longest;
@@ -517,9 +510,9 @@ findLongestWord('No words here');
 function reverseWords(str) {
   const arr = [];
 
-  const toArr = str.replaceAll(' ', ',').split(',');
+  str.replaceAll(' ', ',').split(',');
 
-  for (let i = 0; i < str.length; i++) {
+  for (let i = 0; i < str.length; i += 1) {
     const element = str[i];
     arr.push(element);
   }
@@ -544,7 +537,7 @@ function invertCase(str) {
   const upper = str.toUpperCase().split(' ');
 
   const arr = [];
-  for (let i = 0; i < upper.length; i++) {
+  for (let i = 0; i < upper.length; i += 1) {
     const element = upper[i];
     const el = element[0].toLowerCase() + element.substring(1);
 
@@ -571,8 +564,6 @@ invertCase('12345');
  */
 
 function getStringFromTemplate(firstName, lastName) {
-  firstName = firstName;
-  lastName = lastName;
   return `Hello, ${firstName} ${lastName}!`;
 }
 getStringFromTemplate('John', 'Doe');
@@ -592,8 +583,8 @@ getStringFromTemplate('Chuck', 'Norris');
 function extractNameFromTemplate(value) {
   const regex = /[.!@#$%^&*()]/g;
   const spl = value.replaceAll(regex, '').split(' ');
-
-  [valueGreetings, firstName, lastName] = spl;
+  const firstName = spl[1];
+  const lastName = spl[2];
   return `${firstName} ${lastName}`;
 }
 extractNameFromTemplate('Hello, John Doe!');
@@ -609,13 +600,14 @@ extractNameFromTemplate('Hello, Chuck Norris!');
  *   unbracketTag('<span>') => 'span'
  *   unbracketTag('<a>') => 'a'
  */
-unbracketTag('<div>');
-unbracketTag('<span>');
-unbracketTag('<a>');
+
 function unbracketTag(str) {
   const regex = /[<>]/g;
   return str.replace(regex, '');
 }
+unbracketTag('<div>');
+unbracketTag('<span>');
+unbracketTag('<a>');
 
 /**
  * Extracts e-mails from single string with e-mails list delimited by semicolons
@@ -632,12 +624,13 @@ function unbracketTag(str) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-extractEmails(
-  'angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com'
-);
+
 function extractEmails(str) {
   return str.split(';');
 }
+extractEmails(
+  'angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com'
+);
 
 /**
  * Encode specified string with ROT13 cipher
