@@ -53,10 +53,11 @@ The goal of the assignment is to learn how to work with strings in JS.
 
 ## Submit to [rs app](https://app.rs.school/)
 
-1. Open rs app and login
-2. Go to submit task page
-3. Select your task (Core JS Strings)
-4. Press submit button and enjoy
+1. Commit and push your solutions to your fork
+2. Open rs app and login
+3. Go to submit task page
+4. Select your task (Core JS Strings)
+5. Press submit button and enjoy
 
 ## Notes
 
