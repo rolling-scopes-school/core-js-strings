@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6b9e203-a6b6-48df-9599-4b0312224fc3" name="Changes" comment="" />
+    <list default="true" id="f6b9e203-a6b6-48df-9599-4b0312224fc3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +33,7 @@
     "Mocha.Unnamed.executor": "Run",
     "Mocha.test/strings-tests.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "core-js-strings",
     "last_opened_file_path": "/home/liza/core-js-strings/test",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -84,7 +86,7 @@
       <workItem from="1733437921173" duration="4946000" />
       <workItem from="1733443040180" duration="1676000" />
       <workItem from="1733445217825" duration="618000" />
-      <workItem from="1733447719107" duration="7687000" />
+      <workItem from="1733447719107" duration="8305000" />
     </task>
     <servers />
   </component>
