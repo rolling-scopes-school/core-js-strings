@@ -1,0 +1,30 @@
+{
+  "name": "core-js-strings",
+  "version": "1.0.0",
+  "description": "Core JS Strings",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && mocha",
+    "lint": "node node_modules/eslint/bin/eslint.js ./src",
+    "lint:fix": "node node_modules/eslint/bin/eslint.js ./src --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/core-js-strings.git"
+  },
+  "author": "valerydluski, natein",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.51.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "mocha": "^10.2.0",
+    "prettier": "^3.0.3"
+  },
+  "bugs": {
+    "url": "https://github.com/rolling-scopes-school/core-js-strings/issues"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/core-js-strings#readme"
+}
