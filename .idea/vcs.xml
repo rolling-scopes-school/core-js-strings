@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+<<<<<<< HEAD
     <mapping directory="" vcs="Git" />
+=======
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/core-js-strings" vcs="Git" />
+>>>>>>> core-js-strings
     <mapping directory="$PROJECT_DIR$/ndarti-JSFE2024Q4" vcs="Git" />
   </component>
 </project>
