@@ -564,37 +564,69 @@ function encodeToRot13(str) {
  *   'K♠' => 51
  */
 
+const arr = [
+  'A♣',
+  '2♣',
+  '3♣',
+  '4♣',
+  '5♣',
+  '6♣',
+  '7♣',
+  '8♣',
+  '9♣',
+  '10♣',
+  'J♣',
+  'Q♣',
+  'K♣',
+  'A♦',
+  '2♦',
+  '3♦',
+  '4♦',
+  '5♦',
+  '6♦',
+  '7♦',
+  '8♦',
+  '9♦',
+  '10♦',
+  'J♦',
+  'Q♦',
+  'K♦',
+  'A♥',
+  '2♥',
+  '3♥',
+  '4♥',
+  '5♥',
+  '6♥',
+  '7♥',
+  '8♥',
+  '9♥',
+  '10♥',
+  'J♥',
+  'Q♥',
+  'K♥',
+  'A♠',
+  '2♠',
+  '3♠',
+  '4♠',
+  '5♠',
+  '6♠',
+  '7♠',
+  '8♠',
+  '9♠',
+  '10♠',
+  'J♠',
+  'Q♠',
+  'K♠',
+];
 function getCardId(value) {
-  const SUIT_MULTIPLIER = 13;
-  const values = [
-    'A',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '10',
-    'J',
-    'Q',
-    'K',
-  ];
-  const suits = ['♣', '♦', '♥', '♠'];
-
-  // Validate card value and suit
-  if (!values.includes(value) || !suits.includes(suits)) {
-    return -1; // Invalid card value or suit
-  }
-
-  const valueIndex = values.indexOf(value);
-  const suitIndex = suits.indexOf(suits);
-
-  // Calculate card ID based on value and suit indices
-  return suitIndex * SUIT_MULTIPLIER + valueIndex; // Modify this line if you need to incorporate suit information
+  let num = 0;
+  arr.forEach((card, id) => {
+    if (card === value) {
+      num += id;
+    }
+  });
+  return num;
 }
-
 module.exports = {
   getStringLength,
   isString,
