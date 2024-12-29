@@ -164,7 +164,18 @@ function repeatString(str, times) {
  *   removeFirstOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeFirstOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeFirstOccurrences(str, value) {}
+/* eslint-disable no-unused-vars */
+function removeFirstOccurrences(str, value) {
+  if (typeof str !== 'string' || typeof value !== 'string') {
+    return str;
+  }
+  const index = str.indexOf(value);
+  if (index === -1) {
+    return str;
+  }
+  return str.slice(0, index) + str.slice(index + value.length);
+}
+/* eslint-enable no-unused-vars */
 
 /**
  * Remove the last occurrence of a substring from a string.
@@ -178,7 +189,16 @@ function removeFirstOccurrences(str, value) {}
  *   removeLastOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeLastOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeLastOccurrences(/* str, value */) {}
+function removeLastOccurrences(str, value) {
+  if (typeof str !== 'string' || typeof value !== 'string') {
+    return str;
+  }
+  const index = str.lastIndexOf(value);
+  if (index === -1) {
+    return str;
+  }
+  return str.slice(0, index) + str.slice(index + value.length);
+}
 
 /**
  * Calculate the sum of character codes of the given string.
@@ -192,7 +212,15 @@ function removeLastOccurrences(/* str, value */) {}
  *   sumOfCodes('') => 0
  *   sumOfCodes() => 0
  */
-function sumOfCodes(/* str */) {}
+function sumOfCodes(str) {
+  // Handle edge cases where the input is not a string or is undefined
+  if (typeof str !== 'string' || !str) {
+    return 0;
+  }
+
+  // Use Array.prototype.reduce to calculate the sum of character codes
+  return Array.from(str).reduce((sum, char) => sum + char.charCodeAt(0), 0);
+}
 
 /**
  * Checks if a string starts with a specific substring.
@@ -258,7 +286,13 @@ function reverseString(/* str */) {}
  *   orderAlphabetically('textbook') => 'bekoottx'
  *   orderAlphabetically('abc123xyz') => '123abcxyz'
  */
-function orderAlphabetically(str) {}
+function orderAlphabetically(str) {
+  if (typeof str !== 'string') {
+    return '';
+  }
+  // no more error
+  return str.split('').sort().join('');
+}
 
 /**
  * Checks if a given string contains a specified substring.
@@ -288,7 +322,17 @@ function containsSubstring(str, substring) {}
  *   countVowels('aEiOu') => 5
  *   countVowels('XYZ') => 1
  */
-function countVowels(/* str */) {}
+function countVowels(str) {
+  // plee no more error's i kym
+  if (typeof str !== 'string') {
+    return 0;
+  }
+  const vowels = 'aeiouyAEIOUY';
+  // noo moree
+  return str.split('').reduce((count, char) => {
+    return vowels.includes(char) ? count + 1 : count;
+  }, 0);
+}
 
 /**
  * Returns true if the string is a palindrome; otherwise false.
