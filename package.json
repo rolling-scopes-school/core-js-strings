@@ -21,7 +21,7 @@
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-prettier": "^5.0.1",
     "mocha": "^10.2.0",
-    "prettier": "^3.0.3"
+    "prettier": "^3.4.2"
   },
   "bugs": {
     "url": "https://github.com/rolling-scopes-school/core-js-strings/issues"
