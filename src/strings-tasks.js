@@ -297,7 +297,7 @@ function countVowels(/* str */) {
  * https://en.wikipedia.org/wiki/Palindrome
  *
  * @param {string} str - The input string.
- * @return {bool} - True if the string is a palindrome, false otherwise.
+ * @return {boolean} - True if the string is a palindrome, false otherwise.
  *
  * @example:
  *   isPalindrome('madam') => true
