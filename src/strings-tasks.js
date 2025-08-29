@@ -404,7 +404,7 @@ function unbracketTag(/* str */) {
  * Extracts e-mails from single string with e-mails list delimited by semicolons
  *
  * @param {string} str - The input string.
- * @return {array} - The list of e-mails extracted from the string.
+ * @return {string[]} - The list of e-mails extracted from the string.
  *
  * @example
  *   'angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com'
