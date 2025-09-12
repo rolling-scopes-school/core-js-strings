@@ -22,26 +22,26 @@ describe('strings-tasks', () => {
   });
 
   it.optional('isString should return true if argument is a string', () => {
-    assert.equal(tasks.isString('test'), true);
-    assert.equal(tasks.isString(''), true);
-    assert.equal(tasks.isString('123'), true);
+    assert.equal(tasks.isString('test'), true, '\'test\' is correct string');
+    assert.equal(tasks.isString(''), true, 'empty string value is correct string');
+    assert.equal(tasks.isString('123'), true, '\'123\' is correct string');
     // eslint-disable-next-line no-new-wrappers
-    assert.equal(tasks.isString(new String('test')), true);
+    assert.equal(tasks.isString(new String('test')), true, '\'test\' in String is correct string');
     // eslint-disable-next-line no-new-wrappers
-    assert.equal(tasks.isString(new String('')), true);
+    assert.equal(tasks.isString(new String('')), true, 'empty string value in String is correct string');
     // eslint-disable-next-line no-new-wrappers
-    assert.equal(tasks.isString(new String('123')), true);
+    assert.equal(tasks.isString(new String('123')), true, '\'123\' in String is correct string');
 
-    assert.equal(tasks.isString(), false);
-    assert.equal(tasks.isString(null), false);
-    assert.equal(tasks.isString(undefined), false);
-    assert.equal(tasks.isString(123), false);
-    assert.equal(tasks.isString([]), false);
-    assert.equal(tasks.isString({}), false);
-    assert.equal(tasks.isString(true), false);
-    assert.equal(tasks.isString(false), false);
-    assert.equal(tasks.isString(42), false);
-    assert.equal(tasks.isString(3.14), false);
+    assert.equal(tasks.isString(), false, 'empty value is not correct string');
+    assert.equal(tasks.isString(null), false, 'null is not string');
+    assert.equal(tasks.isString(undefined), false, 'undefined is not string');
+    assert.equal(tasks.isString(123), false, 'number 123 is not string');
+    assert.equal(tasks.isString([]), false, 'array is not string');
+    assert.equal(tasks.isString({}), false, 'object is not string');
+    assert.equal(tasks.isString(true), false, 'boolean value is not string');
+    assert.equal(tasks.isString(false), false, 'boolean value is not string');
+    assert.equal(tasks.isString(42), false, 'number 42 is not string');
+    assert.equal(tasks.isString(3.14), false, 'number 3.14 is not string');
     assert.equal(
       forbidden.isCommented(tasks.isString),
       false,
@@ -285,15 +285,51 @@ describe('strings-tasks', () => {
   );
 
   it.optional('startsWith should return true if str starts with substr', () => {
-    assert.equal(tasks.startsWith('Hello World', 'Hello'), true);
-    assert.equal(tasks.startsWith('123456789', '1234'), true);
-    assert.equal(tasks.startsWith('', ''), true);
-    assert.equal(tasks.startsWith('Hello', ''), true);
-    assert.equal(tasks.startsWith('Hello World', 'hello'), false);
-    assert.equal(tasks.startsWith('HELLO World', 'hello'), false);
-    assert.equal(tasks.startsWith('Hello World', 'World'), false);
-    assert.equal(tasks.startsWith('123456789', '9876'), false);
-    assert.equal(tasks.startsWith('', 'Hello'), false);
+    assert.equal(
+      tasks.startsWith('Hello World', 'Hello'),
+      true,
+      'the line \'Hello World\' starts with the word \'Hello\''
+    );
+    assert.equal(
+      tasks.startsWith('123456789', '1234'),
+      true,
+      'the line \'Hello World\' starts with the word \'Hello\''
+    );
+    assert.equal(
+      tasks.startsWith('', ''),
+      true,
+      'the line \'\' starts with the word \'\''
+    );
+    assert.equal(
+      tasks.startsWith('Hello', ''),
+      true,
+      'the line \'Hello\' starts with the word \'\''
+    );
+    assert.equal(
+      tasks.startsWith('Hello World', 'hello'),
+      false,
+      'the line \'Hello World\' not starts with the word \'hello\''
+    );
+    assert.equal(
+      tasks.startsWith('HELLO World', 'hello'),
+      false,
+      'the line \'HELLO World\' not starts with the word \'hello\''
+    );
+    assert.equal(
+      tasks.startsWith('Hello World', 'World'),
+      false,
+      'the line \'Hello World\' not starts with the word \'World\''
+    );
+    assert.equal(
+      tasks.startsWith('123456789', '9876'),
+      false,
+      'the line \'123456789\' not starts with the word \'9876\''
+    );
+    assert.equal(
+      tasks.startsWith('', 'Hello'),
+      false, 
+      'the line \'\' not starts with the word \'Hello\''
+    );
     assert.equal(
       forbidden.isCommented(tasks.startsWith),
       false,
@@ -302,15 +338,51 @@ describe('strings-tasks', () => {
   });
 
   it.optional('endsWith should return true if str ends with substr', () => {
-    assert.equal(tasks.endsWith('Hello World', 'World'), true);
-    assert.equal(tasks.endsWith('123456789', '6789'), true);
-    assert.equal(tasks.endsWith('', ''), true);
-    assert.equal(tasks.endsWith('Hello', ''), true);
-    assert.equal(tasks.endsWith('Hello WORLD', 'World'), false);
-    assert.equal(tasks.endsWith('Hello world', 'World'), false);
-    assert.equal(tasks.endsWith('Hello World', 'Hello'), false);
-    assert.equal(tasks.endsWith('123456789', '1234'), false);
-    assert.equal(tasks.endsWith('', 'World'), false);
+    assert.equal(
+      tasks.endsWith('Hello World', 'World'),
+      true,
+      'the line \'Hello World\' ends with the word \'World\''
+    );
+    assert.equal(
+      tasks.endsWith('123456789', '6789'),
+      true,
+      'the line \'123456789\' ends with the word \'6789\''
+    );
+    assert.equal(
+      tasks.endsWith('', ''),
+      true,
+      'the line \'\' ends with the word \'\''
+    );
+    assert.equal(
+      tasks.endsWith('Hello', ''),
+      true,
+      'the line \'Hello\' ends with the word \'\''
+    );
+    assert.equal(
+      tasks.endsWith('Hello WORLD', 'World'),
+      false,
+      'the line \'Hello WORLD\' not ends with the word \'World\''
+    );
+    assert.equal(
+      tasks.endsWith('Hello world', 'World'),
+      false,
+      'the line \'Hello world\' not ends with the word \'World\''
+    );
+    assert.equal(
+      tasks.endsWith('Hello World', 'Hello'),
+      false,
+      'the line \'Hello World\' not ends with the word \'Hello\''
+    );
+    assert.equal(
+      tasks.endsWith('123456789', '1234'),
+      false,
+      'the line \'123456789\' not ends with the word \'1234\''
+    );
+    assert.equal(
+      tasks.endsWith('', 'World'),
+      false,
+      'the line \'\' not ends with the word \'World\''
+    );
     assert.equal(
       forbidden.isCommented(tasks.endsWith),
       false,
@@ -369,18 +441,51 @@ describe('strings-tasks', () => {
   it.optional(
     'containsSubstring should return true if the input string contains the specified substring',
     () => {
-      assert.equal(tasks.containsSubstring('Hello, World!', 'World'), true);
-      assert.equal(tasks.containsSubstring('12345', '34'), true);
-      assert.equal(tasks.containsSubstring('Sample text', ''), true);
+      assert.equal(
+        tasks.containsSubstring('Hello, World!', 'World'),
+        true,
+        'the line \'Hello, World!\' contains the substring \'World\''
+      );
+      assert.equal(
+        tasks.containsSubstring('12345', '34'),
+        true,
+        'the line \'12345\' contains the substring \'34\''
+      );
+      assert.equal(
+        tasks.containsSubstring('Sample text', ''),
+        true,
+        'the line \'Sample text\' contains the substring \'\''
+      );
       assert.equal(
         tasks.containsSubstring('JavaScript is Fun', 'Python'),
-        false
+        false,
+        'the line \'JavaScript is Fun\' not contains the substring \'Python\''
       );
-      assert.equal(tasks.containsSubstring('abc', 'xyz'), false);
-      assert.equal(tasks.containsSubstring('', 'substring'), false);
-      assert.equal(tasks.containsSubstring('', ''), true);
-      assert.equal(tasks.containsSubstring('Hello, world!', 'World'), false);
-      assert.equal(tasks.containsSubstring('Hello, World!', 123), false);
+      assert.equal(
+        tasks.containsSubstring('abc', 'xyz'),
+        false,
+        'the line \'abc\' not contains the substring \'xyz\''
+      );
+      assert.equal(
+        tasks.containsSubstring('', 'substring'),
+        false,
+        'the line \'\' not contains the substring \'substring\''
+      );
+      assert.equal(
+        tasks.containsSubstring('', ''),
+        true,
+        'the line \'\' contains the substring \'\''
+      );
+      assert.equal(
+        tasks.containsSubstring('Hello, world!', 'World'),
+        false,
+        'the line \'Hello, world!\' not contains the substring \'World\''
+      );
+      assert.equal(
+        tasks.containsSubstring('Hello, World!', 123),
+        false,
+        'the line \'Hello, World!\' not contains the number value 123'
+      );
       assert.equal(
         forbidden.isCommented(tasks.containsSubstring),
         false,
@@ -411,20 +516,76 @@ describe('strings-tasks', () => {
   it.optional(
     'isPalindrome should return true if the string is a palindrome',
     () => {
-      assert.equal(tasks.isPalindrome('madam'), true);
-      assert.equal(tasks.isPalindrome('racecar'), true);
-      assert.equal(tasks.isPalindrome('a'), true);
-      assert.equal(tasks.isPalindrome('deified'), true);
-      assert.equal(tasks.isPalindrome('apple'), false);
-      assert.equal(tasks.isPalindrome('hello'), false);
-      assert.equal(tasks.isPalindrome('world'), false);
-      assert.equal(tasks.isPalindrome('openai'), false);
-      assert.equal(tasks.isPalindrome('Madam'), true);
-      assert.equal(tasks.isPalindrome('RacECaR'), true);
-      assert.equal(tasks.isPalindrome('Deified'), true);
-      assert.equal(tasks.isPalindrome('A man, a plan, a canal, Panama!'), true);
-      assert.equal(tasks.isPalindrome('Was it a car or a cat I saw?'), true);
-      assert.equal(tasks.isPalindrome('No lemon, no melon'), true);
+      assert.equal(
+        tasks.isPalindrome('madam'),
+        true,
+        '\'madam\' this string is a palindome'
+      );
+      assert.equal(
+        tasks.isPalindrome('racecar'),
+        true,
+        '\'racecar\' this string is a palindome'
+      );
+      assert.equal(
+        tasks.isPalindrome('a'),
+        true,
+        '\'a\' this string is a palindome'
+      );
+      assert.equal(
+        tasks.isPalindrome('deified'),
+        true,
+        '\'deified\' this string is a palindome'
+      );
+      assert.equal(
+        tasks.isPalindrome('apple'),
+        false,
+        '\'apple\' this string is not a palindome'
+      );
+      assert.equal(
+        tasks.isPalindrome('hello'),
+        false,
+        '\'hello\' this string is not a palindome'
+      );
+      assert.equal(
+        tasks.isPalindrome('world'),
+        false,
+        '\'world\' this string is not a palindome'
+      );
+      assert.equal(
+        tasks.isPalindrome('openai'),
+        false,
+        '\'openai\' this string is not a palindome'
+      );
+      assert.equal(
+        tasks.isPalindrome('Madam'),
+        true,
+        '\'Madam\' this string is a palindome'
+      );
+      assert.equal(
+        tasks.isPalindrome('RacECaR'),
+        true,
+        '\'RacECaR\' this string is a palindome'
+      );
+      assert.equal(
+        tasks.isPalindrome('Deified'),
+        true,
+        '\'Deified\' this string is a palindome'
+      );
+      assert.equal(
+        tasks.isPalindrome('A man, a plan, a canal, Panama!'),
+        true,
+        '\'A man, a plan, a canal, Panama!\' this string is a palindome'
+      );
+      assert.equal(
+        tasks.isPalindrome('Was it a car or a cat I saw?'),
+        true,
+        '\'Was it a car or a cat I saw?\' this string is a palindome'
+      );
+      assert.equal(
+        tasks.isPalindrome('No lemon, no melon'),
+        true,
+        '\'No lemon, no melon\' this string is a palindome'
+      );
       assert.equal(
         forbidden.isCommented(tasks.isPalindrome),
         false,
