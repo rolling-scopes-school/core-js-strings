@@ -1,6 +1,7 @@
 const assert = require('assert');
 const tasks = require('../src/strings-tasks');
 it.optional = require('../extensions/it-optional');
+const forbidden = require('../extensions/forbidden');
 
 describe('strings-tasks', () => {
   it.optional('getStringLength should return the length of string', () => {
@@ -13,6 +14,11 @@ describe('strings-tasks', () => {
     assert.equal(tasks.getStringLength(null), 0);
     assert.equal(tasks.getStringLength(undefined), 0);
     assert.equal(tasks.getStringLength(), 0);
+    assert.equal(
+      forbidden.isCommented(tasks.getStringLength),
+      false,
+      `Be sure to remove comments from the final solution`
+    );
   });
 
   it.optional('isString should return true if argument is a string', () => {
@@ -36,6 +42,11 @@ describe('strings-tasks', () => {
     assert.equal(tasks.isString(false), false);
     assert.equal(tasks.isString(42), false);
     assert.equal(tasks.isString(3.14), false);
+    assert.equal(
+      forbidden.isCommented(tasks.isString),
+      false,
+      `Be sure to remove comments from the final solution`
+    );
   });
 
   it.optional(
@@ -52,6 +63,11 @@ describe('strings-tasks', () => {
       assert.equal(tasks.concatenateStrings('aa', ''), 'aa');
       assert.equal(tasks.concatenateStrings('Hello, ', ''), 'Hello, ');
       assert.equal(tasks.concatenateStrings('', ''), '');
+      assert.equal(
+        forbidden.isCommented(tasks.concatenateStrings),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -65,6 +81,11 @@ describe('strings-tasks', () => {
       assert.equal(tasks.getFirstChar('   John'), ' ');
       assert.equal(tasks.getFirstChar('12345'), '1');
       assert.equal(tasks.getFirstChar('!@#$'), '!');
+      assert.equal(
+        forbidden.isCommented(tasks.getFirstChar),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -93,6 +114,11 @@ describe('strings-tasks', () => {
       assert.equal(tasks.removeLeadingAndTrailingWhitespaces('    '), '');
       assert.equal(tasks.removeLeadingAndTrailingWhitespaces('\t\t\t'), '');
       assert.equal(tasks.removeLeadingAndTrailingWhitespaces('\n\n\n'), '');
+      assert.equal(
+        forbidden.isCommented(tasks.removeLeadingAndTrailingWhitespaces),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -121,6 +147,11 @@ describe('strings-tasks', () => {
       assert.equal(tasks.removeLeadingWhitespaces('    '), '');
       assert.equal(tasks.removeLeadingWhitespaces('\t\t\t'), '');
       assert.equal(tasks.removeLeadingWhitespaces('\n\n\n'), '');
+      assert.equal(
+        forbidden.isCommented(tasks.removeLeadingWhitespaces),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -149,6 +180,11 @@ describe('strings-tasks', () => {
       assert.equal(tasks.removeTrailingWhitespaces('    '), '');
       assert.equal(tasks.removeTrailingWhitespaces('\t\t\t'), '');
       assert.equal(tasks.removeTrailingWhitespaces('\n\n\n'), '');
+      assert.equal(
+        forbidden.isCommented(tasks.removeTrailingWhitespaces),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -161,6 +197,11 @@ describe('strings-tasks', () => {
       assert.equal(tasks.repeatString('Hello, World!', 0), '');
       assert.equal(tasks.repeatString('abc', -2), '');
       assert.equal(tasks.repeatString('!@#', 4), '!@#!@#!@#!@#');
+      assert.equal(
+        forbidden.isCommented(tasks.repeatString),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -186,6 +227,11 @@ describe('strings-tasks', () => {
         'The quick brown fox'
       );
       assert.equal(tasks.removeFirstOccurrences('!@#', '!@'), '#');
+      assert.equal(
+        forbidden.isCommented(tasks.removeFirstOccurrences),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -211,6 +257,11 @@ describe('strings-tasks', () => {
         'The quick brown fox'
       );
       assert.equal(tasks.removeLastOccurrences('!@#', '!@'), '#');
+      assert.equal(
+        forbidden.isCommented(tasks.removeLastOccurrences),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -225,6 +276,11 @@ describe('strings-tasks', () => {
       assert.equal(tasks.sumOfCodes(undefined), 0);
       assert.equal(tasks.sumOfCodes('Hello, World!'), 1129);
       assert.equal(tasks.sumOfCodes('!@#$%^&*()'), 460);
+      assert.equal(
+        forbidden.isCommented(tasks.sumOfCodes),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -238,6 +294,11 @@ describe('strings-tasks', () => {
     assert.equal(tasks.startsWith('Hello World', 'World'), false);
     assert.equal(tasks.startsWith('123456789', '9876'), false);
     assert.equal(tasks.startsWith('', 'Hello'), false);
+    assert.equal(
+      forbidden.isCommented(tasks.startsWith),
+      false,
+      `Be sure to remove comments from the final solution`
+    );
   });
 
   it.optional('endsWith should return true if str ends with substr', () => {
@@ -250,6 +311,11 @@ describe('strings-tasks', () => {
     assert.equal(tasks.endsWith('Hello World', 'Hello'), false);
     assert.equal(tasks.endsWith('123456789', '1234'), false);
     assert.equal(tasks.endsWith('', 'World'), false);
+    assert.equal(
+      forbidden.isCommented(tasks.endsWith),
+      false,
+      `Be sure to remove comments from the final solution`
+    );
   });
 
   it.optional(
@@ -260,6 +326,11 @@ describe('strings-tasks', () => {
       assert.equal(tasks.formatTime(0, 45), '00:45');
       assert.equal(tasks.formatTime(0, 0), '00:00');
       assert.equal(tasks.formatTime(9, 5), '09:05');
+      assert.equal(
+        forbidden.isCommented(tasks.formatTime),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -271,6 +342,11 @@ describe('strings-tasks', () => {
     assert.equal(tasks.reverseString(''), '');
     assert.equal(tasks.reverseString('a'), 'a');
     assert.equal(tasks.reverseString('5'), '5');
+    assert.equal(
+      forbidden.isCommented(tasks.reverseString),
+      false,
+      `Be sure to remove comments from the final solution`
+    );
   });
 
   it.optional(
@@ -282,6 +358,11 @@ describe('strings-tasks', () => {
       assert.equal(tasks.orderAlphabetically('abc123xyz'), '123abcxyz');
       assert.equal(tasks.orderAlphabetically('a'), 'a');
       assert.equal(tasks.orderAlphabetically(''), '');
+      assert.equal(
+        forbidden.isCommented(tasks.orderAlphabetically),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -300,6 +381,11 @@ describe('strings-tasks', () => {
       assert.equal(tasks.containsSubstring('', ''), true);
       assert.equal(tasks.containsSubstring('Hello, world!', 'World'), false);
       assert.equal(tasks.containsSubstring('Hello, World!', 123), false);
+      assert.equal(
+        forbidden.isCommented(tasks.containsSubstring),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -314,6 +400,11 @@ describe('strings-tasks', () => {
       assert.equal(tasks.countVowels('XYZ'), 1);
       assert.equal(tasks.countVowels('hmm'), 0);
       assert.equal(tasks.countVowels('1234'), 0);
+      assert.equal(
+        forbidden.isCommented(tasks.countVowels),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -334,6 +425,11 @@ describe('strings-tasks', () => {
       assert.equal(tasks.isPalindrome('A man, a plan, a canal, Panama!'), true);
       assert.equal(tasks.isPalindrome('Was it a car or a cat I saw?'), true);
       assert.equal(tasks.isPalindrome('No lemon, no melon'), true);
+      assert.equal(
+        forbidden.isCommented(tasks.isPalindrome),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -352,6 +448,11 @@ describe('strings-tasks', () => {
       );
       assert.equal(tasks.findLongestWord('The QuIck BROWN foX'), 'QuIck');
       assert.equal(tasks.findLongestWord(''), '');
+      assert.equal(
+        forbidden.isCommented(tasks.findLongestWord),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -367,6 +468,11 @@ describe('strings-tasks', () => {
       'ESACREPPU esacrewol'
     );
     assert.equal(tasks.reverseWords(''), '');
+    assert.equal(
+      forbidden.isCommented(tasks.reverseWords),
+      false,
+      `Be sure to remove comments from the final solution`
+    );
   });
 
   it.optional(
@@ -379,6 +485,11 @@ describe('strings-tasks', () => {
       assert.equal(tasks.invertCase(''), '');
       assert.equal(tasks.invertCase('Hello, 12345!'), 'hELLO, 12345!');
       assert.equal(tasks.invertCase('1a2b3c4d5'), '1A2B3C4D5');
+      assert.equal(
+        forbidden.isCommented(tasks.invertCase),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -392,6 +503,11 @@ describe('strings-tasks', () => {
       assert.equal(
         tasks.getStringFromTemplate('Chuck', 'Norris'),
         'Hello, Chuck Norris!'
+      );
+      assert.equal(
+        forbidden.isCommented(tasks.getStringFromTemplate),
+        false,
+        `Be sure to remove comments from the final solution`
       );
     }
   );
@@ -407,6 +523,11 @@ describe('strings-tasks', () => {
         tasks.extractNameFromTemplate('Hello, Chuck Norris!'),
         'Chuck Norris'
       );
+      assert.equal(
+        forbidden.isCommented(tasks.extractNameFromTemplate),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -416,6 +537,11 @@ describe('strings-tasks', () => {
       assert.equal(tasks.unbracketTag('<div>'), 'div');
       assert.equal(tasks.unbracketTag('<span>'), 'span');
       assert.equal(tasks.unbracketTag('<a>'), 'a');
+      assert.equal(
+        forbidden.isCommented(tasks.unbracketTag),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -435,6 +561,11 @@ describe('strings-tasks', () => {
       assert.deepEqual(tasks.extractEmails('info@gmail.com'), [
         'info@gmail.com',
       ]);
+      assert.equal(
+        forbidden.isCommented(tasks.extractEmails),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 
@@ -455,6 +586,11 @@ describe('strings-tasks', () => {
           'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
         ),
         'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
+      );
+      assert.equal(
+        forbidden.isCommented(tasks.encodeToRot13),
+        false,
+        `Be sure to remove comments from the final solution`
       );
     }
   );
@@ -522,6 +658,11 @@ describe('strings-tasks', () => {
           `Invalid id for card '${val}':`
         );
       });
+      assert.equal(
+        forbidden.isCommented(tasks.getCardId),
+        false,
+        `Be sure to remove comments from the final solution`
+      );
     }
   );
 });
