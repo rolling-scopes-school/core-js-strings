@@ -677,6 +677,7 @@ describe('strings-tasks optimal implementation', () => {
       this.skip();
     }
 
+    assert.equal(tasks.concatenateStrings('aa', 'bb'), 'aabb');
     assert.equal(
       fnStr.includes('concat'),
       true,
@@ -689,6 +690,8 @@ describe('strings-tasks optimal implementation', () => {
     if (!fnStr.includes('return')) {
       this.skip();
     }
+
+    assert.equal(tasks.getFirstChar('cat'), 'c');
     assert.equal(
       fnStr.includes('charAt'),
       true,
@@ -707,6 +710,10 @@ describe('strings-tasks optimal implementation', () => {
         this.skip();
       }
 
+      assert.equal(
+        tasks.removeLeadingAndTrailingWhitespaces('  Abracadabra'),
+        'Abracadabra'
+      );
       assert.equal(
         fnStr.includes('trim'),
         true,
@@ -727,6 +734,10 @@ describe('strings-tasks optimal implementation', () => {
       }
 
       assert.equal(
+        tasks.removeLeadingWhitespaces('  Abracadabra'),
+        'Abracadabra'
+      );
+      assert.equal(
         fnStr.includes('trimStart'),
         true,
         'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
@@ -746,6 +757,10 @@ describe('strings-tasks optimal implementation', () => {
       }
 
       assert.equal(
+        tasks.removeTrailingWhitespaces('  Abracadabra'),
+        '  Abracadabra'
+      );
+      assert.equal(
         fnStr.includes('trimEnd'),
         true,
         'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
@@ -762,6 +777,7 @@ describe('strings-tasks optimal implementation', () => {
       this.skip();
     }
 
+    assert.equal(tasks.repeatString('A', 5), 'AAAAA');
     assert.equal(
       fnStr.includes('repeat'),
       true,
@@ -776,6 +792,10 @@ describe('strings-tasks optimal implementation', () => {
       if (!fnStr.includes('return')) {
         this.skip();
       }
+      assert.equal(
+        tasks.removeFirstOccurrences('To be or not to be', 'be'),
+        'To  or not to be'
+      );
       assert.equal(
         fnStr.includes('indexOf'),
         true,
@@ -792,6 +812,10 @@ describe('strings-tasks optimal implementation', () => {
         this.skip();
       }
       assert.equal(
+        tasks.removeLastOccurrences('To be or not to be', 'be'),
+        'To be or not to '
+      );
+      assert.equal(
         fnStr.includes('lastIndexOf'),
         true,
         'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
@@ -804,6 +828,7 @@ describe('strings-tasks optimal implementation', () => {
     if (!fnStr.includes('return')) {
       this.skip();
     }
+    assert.equal(tasks.sumOfCodes('My String'), 861);
     assert.equal(
       fnStr.includes('charCodeAt'),
       true,
@@ -820,6 +845,7 @@ describe('strings-tasks optimal implementation', () => {
       this.skip();
     }
 
+    assert.equal(tasks.endsWith('Hello World', 'World'), true);
     assert.equal(
       fnStr.includes('endsWith'),
       true,
@@ -836,6 +862,7 @@ describe('strings-tasks optimal implementation', () => {
       this.skip();
     }
 
+    assert.equal(tasks.startsWith('Hello World', 'Hello'), true);
     assert.equal(
       fnStr.includes('startsWith'),
       true,
@@ -848,6 +875,7 @@ describe('strings-tasks optimal implementation', () => {
     if (!fnStr.includes('return')) {
       this.skip();
     }
+    assert.equal(tasks.formatTime(5, 30), '05:30');
     assert.equal(
       fnStr.includes('padStart'),
       true,
@@ -860,6 +888,7 @@ describe('strings-tasks optimal implementation', () => {
     if (!fnStr.includes('return')) {
       this.skip();
     }
+    assert.equal(tasks.containsSubstring('Hello, World!', 'World'), true);
     assert.equal(
       fnStr.includes('includes'),
       true,
@@ -872,6 +901,7 @@ describe('strings-tasks optimal implementation', () => {
     if (!fnStr.includes('return')) {
       this.skip();
     }
+    assert.equal(tasks.invertCase('Hello, World!'), 'hELLO, wORLD!');
     assert.equal(
       fnStr.includes('toLowerCase') && fnStr.includes('toUpperCase'),
       true,
@@ -884,6 +914,9 @@ describe('strings-tasks optimal implementation', () => {
     if (!fnStr.includes('return')) {
       this.skip();
     }
+    assert.deepEqual(tasks.extractEmails('info@gmail.com'), [
+      'info@gmail.com',
+    ]);
     assert.equal(
       fnStr.includes('split'),
       true,
