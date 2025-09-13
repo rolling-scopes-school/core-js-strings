@@ -33,23 +33,23 @@ describe('strings-tasks', () => {
     assert.equal(
       forbidden.isCommented(tasks.getStringLength),
       false,
-      `Be sure to remove comments from the final solution`
+      'Be sure to remove comments from the final solution'
     );
   });
 
   it.optional('isString should return true if argument is a string', () => {
-    assert.equal(tasks.isString('test'), true, "'test' is correct string");
+    assert.equal(tasks.isString('test'), true, '"test" is correct string');
     assert.equal(
       tasks.isString(''),
       true,
       'empty string value is correct string'
     );
-    assert.equal(tasks.isString('123'), true, "'123' is correct string");
+    assert.equal(tasks.isString('123'), true, '"123" is correct string');
     assert.equal(
       // eslint-disable-next-line no-new-wrappers
       tasks.isString(new String('test')),
       true,
-      "'test' in String is correct string"
+      '"test" in String is correct string'
     );
     assert.equal(
       // eslint-disable-next-line no-new-wrappers
@@ -61,7 +61,7 @@ describe('strings-tasks', () => {
       // eslint-disable-next-line no-new-wrappers
       tasks.isString(new String('123')),
       true,
-      "'123' in String is correct string"
+      '"123" in String is correct string'
     );
 
     assert.equal(tasks.isString(), false, 'empty value is not correct string');
@@ -77,7 +77,7 @@ describe('strings-tasks', () => {
     assert.equal(
       forbidden.isCommented(tasks.isString),
       false,
-      `Be sure to remove comments from the final solution`
+      'Be sure to remove comments from the final solution'
     );
   });
 
@@ -98,7 +98,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.concatenateStrings),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
       concatenateStringsSuccess = true;
     }
@@ -117,7 +117,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.getFirstChar),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
       getFirstCharSuccess = true;
     }
@@ -151,7 +151,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.removeLeadingAndTrailingWhitespaces),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
       removeLeadingAndTrailingWhitespacesSuccess = true;
     }
@@ -185,7 +185,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.removeLeadingWhitespaces),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
       removeLeadingWhitespacesSuccess = true;
     }
@@ -219,7 +219,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.removeTrailingWhitespaces),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
       removeTrailingWhitespacesSuccess = true;
     }
@@ -237,7 +237,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.repeatString),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
       repeatStringSuccess = true;
     }
@@ -268,7 +268,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.removeFirstOccurrences),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
       removeFirstOccurrencesSuccess = true;
     }
@@ -299,7 +299,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.removeLastOccurrences),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
       removeLastOccurrencesSuccess = true;
     }
@@ -319,7 +319,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.sumOfCodes),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
       sumOfCodesSuccess = true;
     }
@@ -329,52 +329,52 @@ describe('strings-tasks', () => {
     assert.equal(
       tasks.startsWith('Hello World', 'Hello'),
       true,
-      "the line 'Hello World' starts with the word 'Hello'"
+      'the line "Hello World" starts with the word "Hello"'
     );
     assert.equal(
       tasks.startsWith('123456789', '1234'),
       true,
-      "the line 'Hello World' starts with the word 'Hello'"
+      'the line "Hello World" starts with the word "Hello"'
     );
     assert.equal(
       tasks.startsWith('', ''),
       true,
-      "the line '' starts with the word ''"
+      'the line "" starts with the word ""'
     );
     assert.equal(
       tasks.startsWith('Hello', ''),
       true,
-      "the line 'Hello' starts with the word ''"
+      'the line "Hello" starts with the word ""'
     );
     assert.equal(
       tasks.startsWith('Hello World', 'hello'),
       false,
-      "the line 'Hello World' not starts with the word 'hello'"
+      'the line "Hello World" not starts with the word "hello"'
     );
     assert.equal(
       tasks.startsWith('HELLO World', 'hello'),
       false,
-      "the line 'HELLO World' not starts with the word 'hello'"
+      'the line "HELLO World" not starts with the word "hello"'
     );
     assert.equal(
       tasks.startsWith('Hello World', 'World'),
       false,
-      "the line 'Hello World' not starts with the word 'World'"
+      'the line "Hello World" not starts with the word "World"'
     );
     assert.equal(
       tasks.startsWith('123456789', '9876'),
       false,
-      "the line '123456789' not starts with the word '9876'"
+      'the line "123456789" not starts with the word "9876"'
     );
     assert.equal(
       tasks.startsWith('', 'Hello'),
       false,
-      "the line '' not starts with the word 'Hello'"
+      'the line "" not starts with the word "Hello"'
     );
     assert.equal(
       forbidden.isCommented(tasks.startsWith),
       false,
-      `Be sure to remove comments from the final solution`
+      'Be sure to remove comments from the final solution'
     );
     startsWithSuccess = true;
   });
@@ -383,52 +383,52 @@ describe('strings-tasks', () => {
     assert.equal(
       tasks.endsWith('Hello World', 'World'),
       true,
-      "the line 'Hello World' ends with the word 'World'"
+      'the line "Hello World" ends with the word "World"'
     );
     assert.equal(
       tasks.endsWith('123456789', '6789'),
       true,
-      "the line '123456789' ends with the word '6789'"
+      'the line "123456789" ends with the word "6789"'
     );
     assert.equal(
       tasks.endsWith('', ''),
       true,
-      "the line '' ends with the word ''"
+      'the line "" ends with the word ""'
     );
     assert.equal(
       tasks.endsWith('Hello', ''),
       true,
-      "the line 'Hello' ends with the word ''"
+      'the line "Hello" ends with the word ""'
     );
     assert.equal(
       tasks.endsWith('Hello WORLD', 'World'),
       false,
-      "the line 'Hello WORLD' not ends with the word 'World'"
+      'the line "Hello WORLD" not ends with the word "World"'
     );
     assert.equal(
       tasks.endsWith('Hello world', 'World'),
       false,
-      "the line 'Hello world' not ends with the word 'World'"
+      'the line "Hello world" not ends with the word "World"'
     );
     assert.equal(
       tasks.endsWith('Hello World', 'Hello'),
       false,
-      "the line 'Hello World' not ends with the word 'Hello'"
+      'the line "Hello World" not ends with the word "Hello"'
     );
     assert.equal(
       tasks.endsWith('123456789', '1234'),
       false,
-      "the line '123456789' not ends with the word '1234'"
+      'the line "123456789" not ends with the word "1234"'
     );
     assert.equal(
       tasks.endsWith('', 'World'),
       false,
-      "the line '' not ends with the word 'World'"
+      'the line "" not ends with the word "World"'
     );
     assert.equal(
       forbidden.isCommented(tasks.endsWith),
       false,
-      `Be sure to remove comments from the final solution`
+      'Be sure to remove comments from the final solution'
     );
     endsWithSuccess = true;
   });
@@ -444,7 +444,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.formatTime),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
       formatTimeSuccess = true;
     }
@@ -461,7 +461,7 @@ describe('strings-tasks', () => {
     assert.equal(
       forbidden.isCommented(tasks.reverseString),
       false,
-      `Be sure to remove comments from the final solution`
+      'Be sure to remove comments from the final solution'
     );
   });
 
@@ -477,7 +477,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.orderAlphabetically),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
     }
   );
@@ -488,52 +488,52 @@ describe('strings-tasks', () => {
       assert.equal(
         tasks.containsSubstring('Hello, World!', 'World'),
         true,
-        "the line 'Hello, World!' contains the substring 'World'"
+        'the line "Hello, World!" contains the substring "World"'
       );
       assert.equal(
         tasks.containsSubstring('12345', '34'),
         true,
-        "the line '12345' contains the substring '34'"
+        'the line "12345" contains the substring "34"'
       );
       assert.equal(
         tasks.containsSubstring('Sample text', ''),
         true,
-        "the line 'Sample text' contains the substring ''"
+        'the line "Sample text" contains the substring ""'
       );
       assert.equal(
         tasks.containsSubstring('JavaScript is Fun', 'Python'),
         false,
-        "the line 'JavaScript is Fun' not contains the substring 'Python'"
+        'the line "JavaScript is Fun" not contains the substring "Python"'
       );
       assert.equal(
         tasks.containsSubstring('abc', 'xyz'),
         false,
-        "the line 'abc' not contains the substring 'xyz'"
+        'the line "abc" not contains the substring "xyz"'
       );
       assert.equal(
         tasks.containsSubstring('', 'substring'),
         false,
-        "the line '' not contains the substring 'substring'"
+        'the line "" not contains the substring "substring"'
       );
       assert.equal(
         tasks.containsSubstring('', ''),
         true,
-        "the line '' contains the substring ''"
+        'the line "" contains the substring ""'
       );
       assert.equal(
         tasks.containsSubstring('Hello, world!', 'World'),
         false,
-        "the line 'Hello, world!' not contains the substring 'World'"
+        'the line "Hello, world!" not contains the substring "World"'
       );
       assert.equal(
         tasks.containsSubstring('Hello, World!', 123),
         false,
-        "the line 'Hello, World!' not contains the number value 123"
+        'the line "Hello, World!" not contains the number value 123'
       );
       assert.equal(
         forbidden.isCommented(tasks.containsSubstring),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
       containsSubstringSuccess = true;
     }
@@ -553,7 +553,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.countVowels),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
     }
   );
@@ -564,77 +564,77 @@ describe('strings-tasks', () => {
       assert.equal(
         tasks.isPalindrome('madam'),
         true,
-        "'madam' this string is a palindome"
+        '"madam" this string is a palindome'
       );
       assert.equal(
         tasks.isPalindrome('racecar'),
         true,
-        "'racecar' this string is a palindome"
+        '"racecar" this string is a palindome'
       );
       assert.equal(
         tasks.isPalindrome('a'),
         true,
-        "'a' this string is a palindome"
+        '"a" this string is a palindome'
       );
       assert.equal(
         tasks.isPalindrome('deified'),
         true,
-        "'deified' this string is a palindome"
+        '"deified" this string is a palindome'
       );
       assert.equal(
         tasks.isPalindrome('apple'),
         false,
-        "'apple' this string is not a palindome"
+        '"apple" this string is not a palindome'
       );
       assert.equal(
         tasks.isPalindrome('hello'),
         false,
-        "'hello' this string is not a palindome"
+        '"hello" this string is not a palindome'
       );
       assert.equal(
         tasks.isPalindrome('world'),
         false,
-        "'world' this string is not a palindome"
+        '"world" this string is not a palindome'
       );
       assert.equal(
         tasks.isPalindrome('openai'),
         false,
-        "'openai' this string is not a palindome"
+        '"openai" this string is not a palindome'
       );
       assert.equal(
         tasks.isPalindrome('Madam'),
         true,
-        "'Madam' this string is a palindome"
+        '"Madam" this string is a palindome'
       );
       assert.equal(
         tasks.isPalindrome('RacECaR'),
         true,
-        "'RacECaR' this string is a palindome"
+        '"RacECaR" this string is a palindome'
       );
       assert.equal(
         tasks.isPalindrome('Deified'),
         true,
-        "'Deified' this string is a palindome"
+        '"Deified" this string is a palindome'
       );
       assert.equal(
         tasks.isPalindrome('A man, a plan, a canal, Panama!'),
         true,
-        "'A man, a plan, a canal, Panama!' this string is a palindome"
+        '"A man, a plan, a canal, Panama!" this string is a palindome'
       );
       assert.equal(
         tasks.isPalindrome('Was it a car or a cat I saw?'),
         true,
-        "'Was it a car or a cat I saw?' this string is a palindome"
+        '"Was it a car or a cat I saw?" this string is a palindome'
       );
       assert.equal(
         tasks.isPalindrome('No lemon, no melon'),
         true,
-        "'No lemon, no melon' this string is a palindome"
+        '"No lemon, no melon" this string is a palindome'
       );
       assert.equal(
         forbidden.isCommented(tasks.isPalindrome),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
     }
   );
@@ -657,7 +657,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.findLongestWord),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
     }
   );
@@ -677,7 +677,7 @@ describe('strings-tasks', () => {
     assert.equal(
       forbidden.isCommented(tasks.reverseWords),
       false,
-      `Be sure to remove comments from the final solution`
+      'Be sure to remove comments from the final solution'
     );
   });
 
@@ -694,7 +694,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.invertCase),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
       invertCaseSuccess = true;
     }
@@ -714,7 +714,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.getStringFromTemplate),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
     }
   );
@@ -733,7 +733,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.extractNameFromTemplate),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
     }
   );
@@ -747,7 +747,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.unbracketTag),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
     }
   );
@@ -771,7 +771,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.extractEmails),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
       extractEmailsSuccess = true;
     }
@@ -798,7 +798,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.encodeToRot13),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
     }
   );
@@ -869,7 +869,7 @@ describe('strings-tasks', () => {
       assert.equal(
         forbidden.isCommented(tasks.getCardId),
         false,
-        `Be sure to remove comments from the final solution`
+        'Be sure to remove comments from the final solution'
       );
     }
   );
