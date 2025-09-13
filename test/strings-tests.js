@@ -3,6 +3,22 @@ const tasks = require('../src/strings-tasks');
 it.optional = require('../extensions/it-optional');
 const forbidden = require('../extensions/forbidden');
 
+let concatenateStringsSuccess = false;
+let getFirstCharSuccess = false;
+let removeLeadingAndTrailingWhitespacesSuccess = false;
+let removeLeadingWhitespacesSuccess = false;
+let removeTrailingWhitespacesSuccess = false;
+let repeatStringSuccess = false;
+let removeFirstOccurrencesSuccess = false;
+let removeLastOccurrencesSuccess = false;
+let sumOfCodesSuccess = false;
+let endsWithSuccess = false;
+let startsWithSuccess = false;
+let formatTimeSuccess = false;
+let containsSubstringSuccess = false;
+let invertCaseSuccess = false;
+let extractEmailsSuccess = false;
+
 describe('strings-tasks', () => {
   it.optional('getStringLength should return the length of string', () => {
     assert.equal(tasks.getStringLength('aaaaa'), 5);
@@ -22,15 +38,31 @@ describe('strings-tasks', () => {
   });
 
   it.optional('isString should return true if argument is a string', () => {
-    assert.equal(tasks.isString('test'), true, '\'test\' is correct string');
-    assert.equal(tasks.isString(''), true, 'empty string value is correct string');
-    assert.equal(tasks.isString('123'), true, '\'123\' is correct string');
-    // eslint-disable-next-line no-new-wrappers
-    assert.equal(tasks.isString(new String('test')), true, '\'test\' in String is correct string');
-    // eslint-disable-next-line no-new-wrappers
-    assert.equal(tasks.isString(new String('')), true, 'empty string value in String is correct string');
-    // eslint-disable-next-line no-new-wrappers
-    assert.equal(tasks.isString(new String('123')), true, '\'123\' in String is correct string');
+    assert.equal(tasks.isString('test'), true, "'test' is correct string");
+    assert.equal(
+      tasks.isString(''),
+      true,
+      'empty string value is correct string'
+    );
+    assert.equal(tasks.isString('123'), true, "'123' is correct string");
+    assert.equal(
+      // eslint-disable-next-line no-new-wrappers
+      tasks.isString(new String('test')),
+      true,
+      "'test' in String is correct string"
+    );
+    assert.equal(
+      // eslint-disable-next-line no-new-wrappers
+      tasks.isString(new String('')),
+      true,
+      'empty string value in String is correct string'
+    );
+    assert.equal(
+      // eslint-disable-next-line no-new-wrappers
+      tasks.isString(new String('123')),
+      true,
+      "'123' in String is correct string"
+    );
 
     assert.equal(tasks.isString(), false, 'empty value is not correct string');
     assert.equal(tasks.isString(null), false, 'null is not string');
@@ -68,6 +100,7 @@ describe('strings-tasks', () => {
         false,
         `Be sure to remove comments from the final solution`
       );
+      concatenateStringsSuccess = true;
     }
   );
 
@@ -86,6 +119,7 @@ describe('strings-tasks', () => {
         false,
         `Be sure to remove comments from the final solution`
       );
+      getFirstCharSuccess = true;
     }
   );
 
@@ -119,6 +153,7 @@ describe('strings-tasks', () => {
         false,
         `Be sure to remove comments from the final solution`
       );
+      removeLeadingAndTrailingWhitespacesSuccess = true;
     }
   );
 
@@ -152,6 +187,7 @@ describe('strings-tasks', () => {
         false,
         `Be sure to remove comments from the final solution`
       );
+      removeLeadingWhitespacesSuccess = true;
     }
   );
 
@@ -185,6 +221,7 @@ describe('strings-tasks', () => {
         false,
         `Be sure to remove comments from the final solution`
       );
+      removeTrailingWhitespacesSuccess = true;
     }
   );
 
@@ -202,6 +239,7 @@ describe('strings-tasks', () => {
         false,
         `Be sure to remove comments from the final solution`
       );
+      repeatStringSuccess = true;
     }
   );
 
@@ -232,6 +270,7 @@ describe('strings-tasks', () => {
         false,
         `Be sure to remove comments from the final solution`
       );
+      removeFirstOccurrencesSuccess = true;
     }
   );
 
@@ -262,6 +301,7 @@ describe('strings-tasks', () => {
         false,
         `Be sure to remove comments from the final solution`
       );
+      removeLastOccurrencesSuccess = true;
     }
   );
 
@@ -281,6 +321,7 @@ describe('strings-tasks', () => {
         false,
         `Be sure to remove comments from the final solution`
       );
+      sumOfCodesSuccess = true;
     }
   );
 
@@ -288,106 +329,108 @@ describe('strings-tasks', () => {
     assert.equal(
       tasks.startsWith('Hello World', 'Hello'),
       true,
-      'the line \'Hello World\' starts with the word \'Hello\''
+      "the line 'Hello World' starts with the word 'Hello'"
     );
     assert.equal(
       tasks.startsWith('123456789', '1234'),
       true,
-      'the line \'Hello World\' starts with the word \'Hello\''
+      "the line 'Hello World' starts with the word 'Hello'"
     );
     assert.equal(
       tasks.startsWith('', ''),
       true,
-      'the line \'\' starts with the word \'\''
+      "the line '' starts with the word ''"
     );
     assert.equal(
       tasks.startsWith('Hello', ''),
       true,
-      'the line \'Hello\' starts with the word \'\''
+      "the line 'Hello' starts with the word ''"
     );
     assert.equal(
       tasks.startsWith('Hello World', 'hello'),
       false,
-      'the line \'Hello World\' not starts with the word \'hello\''
+      "the line 'Hello World' not starts with the word 'hello'"
     );
     assert.equal(
       tasks.startsWith('HELLO World', 'hello'),
       false,
-      'the line \'HELLO World\' not starts with the word \'hello\''
+      "the line 'HELLO World' not starts with the word 'hello'"
     );
     assert.equal(
       tasks.startsWith('Hello World', 'World'),
       false,
-      'the line \'Hello World\' not starts with the word \'World\''
+      "the line 'Hello World' not starts with the word 'World'"
     );
     assert.equal(
       tasks.startsWith('123456789', '9876'),
       false,
-      'the line \'123456789\' not starts with the word \'9876\''
+      "the line '123456789' not starts with the word '9876'"
     );
     assert.equal(
       tasks.startsWith('', 'Hello'),
-      false, 
-      'the line \'\' not starts with the word \'Hello\''
+      false,
+      "the line '' not starts with the word 'Hello'"
     );
     assert.equal(
       forbidden.isCommented(tasks.startsWith),
       false,
       `Be sure to remove comments from the final solution`
     );
+    startsWithSuccess = true;
   });
 
   it.optional('endsWith should return true if str ends with substr', () => {
     assert.equal(
       tasks.endsWith('Hello World', 'World'),
       true,
-      'the line \'Hello World\' ends with the word \'World\''
+      "the line 'Hello World' ends with the word 'World'"
     );
     assert.equal(
       tasks.endsWith('123456789', '6789'),
       true,
-      'the line \'123456789\' ends with the word \'6789\''
+      "the line '123456789' ends with the word '6789'"
     );
     assert.equal(
       tasks.endsWith('', ''),
       true,
-      'the line \'\' ends with the word \'\''
+      "the line '' ends with the word ''"
     );
     assert.equal(
       tasks.endsWith('Hello', ''),
       true,
-      'the line \'Hello\' ends with the word \'\''
+      "the line 'Hello' ends with the word ''"
     );
     assert.equal(
       tasks.endsWith('Hello WORLD', 'World'),
       false,
-      'the line \'Hello WORLD\' not ends with the word \'World\''
+      "the line 'Hello WORLD' not ends with the word 'World'"
     );
     assert.equal(
       tasks.endsWith('Hello world', 'World'),
       false,
-      'the line \'Hello world\' not ends with the word \'World\''
+      "the line 'Hello world' not ends with the word 'World'"
     );
     assert.equal(
       tasks.endsWith('Hello World', 'Hello'),
       false,
-      'the line \'Hello World\' not ends with the word \'Hello\''
+      "the line 'Hello World' not ends with the word 'Hello'"
     );
     assert.equal(
       tasks.endsWith('123456789', '1234'),
       false,
-      'the line \'123456789\' not ends with the word \'1234\''
+      "the line '123456789' not ends with the word '1234'"
     );
     assert.equal(
       tasks.endsWith('', 'World'),
       false,
-      'the line \'\' not ends with the word \'World\''
+      "the line '' not ends with the word 'World'"
     );
     assert.equal(
       forbidden.isCommented(tasks.endsWith),
       false,
       `Be sure to remove comments from the final solution`
     );
+    endsWithSuccess = true;
   });
 
   it.optional(
@@ -403,6 +446,7 @@ describe('strings-tasks', () => {
         false,
         `Be sure to remove comments from the final solution`
       );
+      formatTimeSuccess = true;
     }
   );
 
@@ -444,53 +488,54 @@ describe('strings-tasks', () => {
       assert.equal(
         tasks.containsSubstring('Hello, World!', 'World'),
         true,
-        'the line \'Hello, World!\' contains the substring \'World\''
+        "the line 'Hello, World!' contains the substring 'World'"
       );
       assert.equal(
         tasks.containsSubstring('12345', '34'),
         true,
-        'the line \'12345\' contains the substring \'34\''
+        "the line '12345' contains the substring '34'"
       );
       assert.equal(
         tasks.containsSubstring('Sample text', ''),
         true,
-        'the line \'Sample text\' contains the substring \'\''
+        "the line 'Sample text' contains the substring ''"
       );
       assert.equal(
         tasks.containsSubstring('JavaScript is Fun', 'Python'),
         false,
-        'the line \'JavaScript is Fun\' not contains the substring \'Python\''
+        "the line 'JavaScript is Fun' not contains the substring 'Python'"
       );
       assert.equal(
         tasks.containsSubstring('abc', 'xyz'),
         false,
-        'the line \'abc\' not contains the substring \'xyz\''
+        "the line 'abc' not contains the substring 'xyz'"
       );
       assert.equal(
         tasks.containsSubstring('', 'substring'),
         false,
-        'the line \'\' not contains the substring \'substring\''
+        "the line '' not contains the substring 'substring'"
       );
       assert.equal(
         tasks.containsSubstring('', ''),
         true,
-        'the line \'\' contains the substring \'\''
+        "the line '' contains the substring ''"
       );
       assert.equal(
         tasks.containsSubstring('Hello, world!', 'World'),
         false,
-        'the line \'Hello, world!\' not contains the substring \'World\''
+        "the line 'Hello, world!' not contains the substring 'World'"
       );
       assert.equal(
         tasks.containsSubstring('Hello, World!', 123),
         false,
-        'the line \'Hello, World!\' not contains the number value 123'
+        "the line 'Hello, World!' not contains the number value 123"
       );
       assert.equal(
         forbidden.isCommented(tasks.containsSubstring),
         false,
         `Be sure to remove comments from the final solution`
       );
+      containsSubstringSuccess = true;
     }
   );
 
@@ -519,72 +564,72 @@ describe('strings-tasks', () => {
       assert.equal(
         tasks.isPalindrome('madam'),
         true,
-        '\'madam\' this string is a palindome'
+        "'madam' this string is a palindome"
       );
       assert.equal(
         tasks.isPalindrome('racecar'),
         true,
-        '\'racecar\' this string is a palindome'
+        "'racecar' this string is a palindome"
       );
       assert.equal(
         tasks.isPalindrome('a'),
         true,
-        '\'a\' this string is a palindome'
+        "'a' this string is a palindome"
       );
       assert.equal(
         tasks.isPalindrome('deified'),
         true,
-        '\'deified\' this string is a palindome'
+        "'deified' this string is a palindome"
       );
       assert.equal(
         tasks.isPalindrome('apple'),
         false,
-        '\'apple\' this string is not a palindome'
+        "'apple' this string is not a palindome"
       );
       assert.equal(
         tasks.isPalindrome('hello'),
         false,
-        '\'hello\' this string is not a palindome'
+        "'hello' this string is not a palindome"
       );
       assert.equal(
         tasks.isPalindrome('world'),
         false,
-        '\'world\' this string is not a palindome'
+        "'world' this string is not a palindome"
       );
       assert.equal(
         tasks.isPalindrome('openai'),
         false,
-        '\'openai\' this string is not a palindome'
+        "'openai' this string is not a palindome"
       );
       assert.equal(
         tasks.isPalindrome('Madam'),
         true,
-        '\'Madam\' this string is a palindome'
+        "'Madam' this string is a palindome"
       );
       assert.equal(
         tasks.isPalindrome('RacECaR'),
         true,
-        '\'RacECaR\' this string is a palindome'
+        "'RacECaR' this string is a palindome"
       );
       assert.equal(
         tasks.isPalindrome('Deified'),
         true,
-        '\'Deified\' this string is a palindome'
+        "'Deified' this string is a palindome"
       );
       assert.equal(
         tasks.isPalindrome('A man, a plan, a canal, Panama!'),
         true,
-        '\'A man, a plan, a canal, Panama!\' this string is a palindome'
+        "'A man, a plan, a canal, Panama!' this string is a palindome"
       );
       assert.equal(
         tasks.isPalindrome('Was it a car or a cat I saw?'),
         true,
-        '\'Was it a car or a cat I saw?\' this string is a palindome'
+        "'Was it a car or a cat I saw?' this string is a palindome"
       );
       assert.equal(
         tasks.isPalindrome('No lemon, no melon'),
         true,
-        '\'No lemon, no melon\' this string is a palindome'
+        "'No lemon, no melon' this string is a palindome"
       );
       assert.equal(
         forbidden.isCommented(tasks.isPalindrome),
@@ -651,6 +696,7 @@ describe('strings-tasks', () => {
         false,
         `Be sure to remove comments from the final solution`
       );
+      invertCaseSuccess = true;
     }
   );
 
@@ -727,6 +773,7 @@ describe('strings-tasks', () => {
         false,
         `Be sure to remove comments from the final solution`
       );
+      extractEmailsSuccess = true;
     }
   );
 
@@ -834,11 +881,10 @@ describe('strings-tasks optimal implementation', () => {
     const idx = fnStr.indexOf('{');
     fnStr = fnStr.slice(idx);
 
-    if (!fnStr.includes('return')) {
+    if (!fnStr.includes('return') || !concatenateStringsSuccess) {
       this.skip();
     }
 
-    assert.equal(tasks.concatenateStrings('aa', 'bb'), 'aabb');
     assert.equal(
       fnStr.includes('concat'),
       true,
@@ -848,11 +894,10 @@ describe('strings-tasks optimal implementation', () => {
 
   it.optional('optimal implementation of getFirstChar', function test() {
     const fnStr = tasks.getFirstChar.toString();
-    if (!fnStr.includes('return')) {
+    if (!fnStr.includes('return') || !getFirstCharSuccess) {
       this.skip();
     }
 
-    assert.equal(tasks.getFirstChar('cat'), 'c');
     assert.equal(
       fnStr.includes('charAt'),
       true,
@@ -867,14 +912,13 @@ describe('strings-tasks optimal implementation', () => {
       const idx = fnStr.indexOf('{');
       fnStr = fnStr.slice(idx);
 
-      if (!fnStr.includes('return')) {
+      if (
+        !fnStr.includes('return') ||
+        !removeLeadingAndTrailingWhitespacesSuccess
+      ) {
         this.skip();
       }
 
-      assert.equal(
-        tasks.removeLeadingAndTrailingWhitespaces('  Abracadabra'),
-        'Abracadabra'
-      );
       assert.equal(
         fnStr.includes('trim'),
         true,
@@ -890,14 +934,10 @@ describe('strings-tasks optimal implementation', () => {
       const idx = fnStr.indexOf('{');
       fnStr = fnStr.slice(idx);
 
-      if (!fnStr.includes('return')) {
+      if (!fnStr.includes('return') || !removeLeadingWhitespacesSuccess) {
         this.skip();
       }
 
-      assert.equal(
-        tasks.removeLeadingWhitespaces('  Abracadabra'),
-        'Abracadabra'
-      );
       assert.equal(
         fnStr.includes('trimStart'),
         true,
@@ -913,14 +953,10 @@ describe('strings-tasks optimal implementation', () => {
       const idx = fnStr.indexOf('{');
       fnStr = fnStr.slice(idx);
 
-      if (!fnStr.includes('return')) {
+      if (!fnStr.includes('return') || !removeTrailingWhitespacesSuccess) {
         this.skip();
       }
 
-      assert.equal(
-        tasks.removeTrailingWhitespaces('  Abracadabra'),
-        '  Abracadabra'
-      );
       assert.equal(
         fnStr.includes('trimEnd'),
         true,
@@ -934,11 +970,10 @@ describe('strings-tasks optimal implementation', () => {
     const idx = fnStr.indexOf('{');
     fnStr = fnStr.slice(idx);
 
-    if (!fnStr.includes('return')) {
+    if (!fnStr.includes('return') || !repeatStringSuccess) {
       this.skip();
     }
 
-    assert.equal(tasks.repeatString('A', 5), 'AAAAA');
     assert.equal(
       fnStr.includes('repeat'),
       true,
@@ -950,13 +985,9 @@ describe('strings-tasks optimal implementation', () => {
     'optimal implementation of removeFirstOccurrences',
     function test() {
       const fnStr = tasks.removeFirstOccurrences.toString();
-      if (!fnStr.includes('return')) {
+      if (!fnStr.includes('return') || !removeFirstOccurrencesSuccess) {
         this.skip();
       }
-      assert.equal(
-        tasks.removeFirstOccurrences('To be or not to be', 'be'),
-        'To  or not to be'
-      );
       assert.equal(
         fnStr.includes('indexOf'),
         true,
@@ -969,13 +1000,9 @@ describe('strings-tasks optimal implementation', () => {
     'optimal implementation of removeLastOccurrences',
     function test() {
       const fnStr = tasks.removeLastOccurrences.toString();
-      if (!fnStr.includes('return')) {
+      if (!fnStr.includes('return') || !removeLastOccurrencesSuccess) {
         this.skip();
       }
-      assert.equal(
-        tasks.removeLastOccurrences('To be or not to be', 'be'),
-        'To be or not to '
-      );
       assert.equal(
         fnStr.includes('lastIndexOf'),
         true,
@@ -986,10 +1013,9 @@ describe('strings-tasks optimal implementation', () => {
 
   it.optional('optimal implementation of sumOfCodes', function test() {
     const fnStr = tasks.sumOfCodes.toString();
-    if (!fnStr.includes('return')) {
+    if (!fnStr.includes('return') || !sumOfCodesSuccess) {
       this.skip();
     }
-    assert.equal(tasks.sumOfCodes('My String'), 861);
     assert.equal(
       fnStr.includes('charCodeAt'),
       true,
@@ -1002,11 +1028,10 @@ describe('strings-tasks optimal implementation', () => {
     const idx = fnStr.indexOf('{');
     fnStr = fnStr.slice(idx);
 
-    if (!fnStr.includes('return')) {
+    if (!fnStr.includes('return') || !endsWithSuccess) {
       this.skip();
     }
 
-    assert.equal(tasks.endsWith('Hello World', 'World'), true);
     assert.equal(
       fnStr.includes('endsWith'),
       true,
@@ -1019,11 +1044,10 @@ describe('strings-tasks optimal implementation', () => {
     const idx = fnStr.indexOf('{');
     fnStr = fnStr.slice(idx);
 
-    if (!fnStr.includes('return')) {
+    if (!fnStr.includes('return') || !startsWithSuccess) {
       this.skip();
     }
 
-    assert.equal(tasks.startsWith('Hello World', 'Hello'), true);
     assert.equal(
       fnStr.includes('startsWith'),
       true,
@@ -1033,10 +1057,9 @@ describe('strings-tasks optimal implementation', () => {
 
   it.optional('optimal implementation of formatTime', function test() {
     const fnStr = tasks.formatTime.toString();
-    if (!fnStr.includes('return')) {
+    if (!fnStr.includes('return') || !formatTimeSuccess) {
       this.skip();
     }
-    assert.equal(tasks.formatTime(5, 30), '05:30');
     assert.equal(
       fnStr.includes('padStart'),
       true,
@@ -1046,10 +1069,9 @@ describe('strings-tasks optimal implementation', () => {
 
   it.optional('optimal implementation of containsSubstring', function test() {
     const fnStr = tasks.containsSubstring.toString();
-    if (!fnStr.includes('return')) {
+    if (!fnStr.includes('return') || !containsSubstringSuccess) {
       this.skip();
     }
-    assert.equal(tasks.containsSubstring('Hello, World!', 'World'), true);
     assert.equal(
       fnStr.includes('includes'),
       true,
@@ -1059,10 +1081,9 @@ describe('strings-tasks optimal implementation', () => {
 
   it.optional('optimal implementation of invertCase', function test() {
     const fnStr = tasks.invertCase.toString();
-    if (!fnStr.includes('return')) {
+    if (!fnStr.includes('return') || !invertCaseSuccess) {
       this.skip();
     }
-    assert.equal(tasks.invertCase('Hello, World!'), 'hELLO, wORLD!');
     assert.equal(
       fnStr.includes('toLowerCase') && fnStr.includes('toUpperCase'),
       true,
@@ -1072,12 +1093,10 @@ describe('strings-tasks optimal implementation', () => {
 
   it.optional('optimal implementation of extractEmails', function test() {
     const fnStr = tasks.extractEmails.toString();
-    if (!fnStr.includes('return')) {
+    if (!fnStr.includes('return') || !extractEmailsSuccess) {
       this.skip();
     }
-    assert.deepEqual(tasks.extractEmails('info@gmail.com'), [
-      'info@gmail.com',
-    ]);
+    assert.deepEqual(tasks.extractEmails('info@gmail.com'), ['info@gmail.com']);
     assert.equal(
       fnStr.includes('split'),
       true,
