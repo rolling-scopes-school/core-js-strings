@@ -356,8 +356,12 @@ function countVowels(str) {
  */
 function isPalindrome(str) {
   if (
-    str.replaceAll(' ', '').toLowerCase().split('').reverse().join('') ===
-    str.replaceAll(' ', '').toLowerCase()
+    str
+      .replaceAll(/[ !,?.]+/g, '')
+      .toLowerCase()
+      .split('')
+      .reverse()
+      .join('') === str.replaceAll(/[ !,?.]+/g, '').toLowerCase()
   ) {
     return true;
   }
