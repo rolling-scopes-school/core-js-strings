@@ -259,10 +259,15 @@ function endsWith(str, substr) {
  *   formatTime(0, 0) => "00:00"
  */
 function formatTime(minutes, seconds) {
-  if (minutes >= 10 && seconds >= 10) {
-    return `${minutes}:${seconds}`;
+  let min = minutes;
+  let sec = seconds;
+  if (minutes < 10) {
+    min = '0'.concat(minutes);
   }
-  return `0${minutes}:${seconds}`;
+  if (seconds < 10) {
+    sec = '0'.concat(seconds);
+  }
+  return `${min}:${sec}`;
 }
 
 /**
