@@ -177,7 +177,13 @@ function removeFirstOccurrences(str, value) {
  */
 function removeLastOccurrences(str, value) {
   const ind = str.lastIndexOf(value);
-  return str.substring(0, ind);
+  console.log(str, value);
+  if (ind >= 0) {
+    const splitted = str.split('');
+    splitted.splice(ind, value.length);
+    return splitted.join('');
+  }
+  return str;
 }
 
 /**
