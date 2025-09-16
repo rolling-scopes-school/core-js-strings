@@ -177,7 +177,6 @@ function removeFirstOccurrences(str, value) {
  */
 function removeLastOccurrences(str, value) {
   const ind = str.lastIndexOf(value);
-  console.log(str, value);
   if (ind >= 0) {
     const splitted = str.split('');
     splitted.splice(ind, value.length);
